@@ -27,5 +27,7 @@ https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
 - Svelte Documentation
 - ChatGPT for cleaning up bugs and text
 - @tli24 for art
+- https://kit.svelte.dev/docs/introduction for SvelteKit help and docs
+- https://www.tensorflow.org/js/tutorials for TensorFlow and Image Processing ML help
 
 
