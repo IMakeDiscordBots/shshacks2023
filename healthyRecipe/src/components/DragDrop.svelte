@@ -1,6 +1,13 @@
 <script>
-    export let file = null;
-    
+    /**
+     * @type {{ click: () => any; } | null}
+     */
+    export let fileInput = null;
+    /**
+     * @type {any[]}
+     */
+    let selectedFiles = [];
+
     /**
      * @param {{ preventDefault: () => void; }} event
      */
@@ -12,36 +19,58 @@
      */
     function handleDrop(event) {
         event.preventDefault();
-        file = event.dataTransfer.files;
-        console.log(file);
-        console.log(`File exists: ${typeof(file) !== "undefined"}`)
+        fileInput = event.dataTransfer.files;
     }
     /**
      * @param {{ target: { files: any; }; }} event
      */
     function handleFileSelect(event) {
         const files = event.target.files;
+        console.log(fileInput);
+        console.log(`File exists: ${typeof fileInput !== "undefined"}`);
+        selectedFiles = [...selectedFiles, ...files];
+    }
+
+    function handleClick() {// @ts-ignore
+        fileInput.click();
+    }
+
+    /**
+     * @param {{ key: string; }} event
+     */
+    function handleKeyDown(event) {
+        if (event.key === "Enter") {
+            handleClick();
+        }
     }
 </script>
 
-<div class = "files-drop" on:dragover = {handleDragOver} on:drop = {handleDrop} onclick = {() => fileInput.click()}>
+<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+<div
+    class="files-drop"
+    on:dragover={handleDragOver}
+    on:drop={handleDrop}
+    on:click={handleClick}
+    tabindex="0"
+    on:keydown={handleKeyDown}
+>
     Drag and drop your image here or click to add a file to add a file
     <input
-        type = "file"
+        type="file"
         accept="image/*"
         style="display: none;"
-        bind:this = {file}
-        on:change = {handleFileSelect}
+        bind:this={fileInput}
+        on:change={handleFileSelect}
     />
 </div>
 
 <style>
     :root {
-        --nav-bar: #7D84B2;
-        --nav-text: #D95D39;
-        --primary: #8D98A7;
-        --secondary: #DCCCBB;
-        --tertiary: #646E78;
+        --nav-bar: #7d84b2;
+        --nav-text: #d95d39;
+        --primary: #8d98a7;
+        --secondary: #dcccbb;
+        --tertiary: #646e78;
     }
 
     .files-drop {
