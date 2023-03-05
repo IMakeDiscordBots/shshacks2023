@@ -71,8 +71,12 @@
   }
 </script>
 <Header />
-<main>
-  <h1>Teeth AI Model</h1>
+<body>
+  <div class="main">
+    <div class="content">
+        <h1>Teeth AI Model</h1>
+        <div class = "about">
+  
   <!-- svelte-ignore a11y-media-has-caption -->
   <video bind:this={videoSource} />
   <button on:click={obtenerVideoCamara}>Analyze Your Teeth</button>
@@ -83,19 +87,44 @@
   {:else if percentage && name}
     <h2>AI {percentage} certain your teeth is {name}</h2>
   {/if}
-</main>
+</div>
+</div>
+</div>
+        </body>
 
 <style>
+ 
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Open+Sans&family=Playfair+Display&family=Raleway&display=swap');
+    :root {
+        --nav-bar: #7D84B2;
+        --nav-text: #D95D39;
+        --primary: #8D98A7;
+        --secondary: #DCCCBB;
+        --tertiary: #646E78;
+    }
+    
+        
+    .content {
+        margin: auto;
+        border-radius: 10px;
+        background-color: #FAF9F6;
+        padding: 40px;
+        box-shadow: 0 20px 30px -14px rgba(0, 0, 0, 0.25);
+    }
+    h1 {
+        font-family: 'Gloock', serif;
+    }
+    .about {
+        font-family: 'Raleway', sans-serif;
+    } 
   main {
-    width: 100%;
-    height: 100vh;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
+    
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+    margin: auto;
+    padding: 100px;
+    background-color: #D5F9DE;
+    }
+  
 
   video {
     display: block;
