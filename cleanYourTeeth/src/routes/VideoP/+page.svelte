@@ -78,8 +78,6 @@
         <div class = "about">
   
   <!-- svelte-ignore a11y-media-has-caption -->
-  <video bind:this={videoSource} />
-  <button on:click={obtenerVideoCamara}>Analyze Your Teeth</button>
   {#if errorMessage}
     <h2>{errorMessage}</h2>
   {:else if loading}
@@ -87,6 +85,8 @@
   {:else if percentage && name}
     <h2>AI {percentage} certain your teeth is {name}</h2>
   {/if}
+  <video bind:this={videoSource} />
+  <button on:click={obtenerVideoCamara}>Analyze Your Teeth</button>
 </div>
 </div>
 </div>
