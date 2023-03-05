@@ -42,9 +42,12 @@
         selectedFiles = [...selectedFiles, ...files];
 
         fetch('http://127.0.0.1:5000/images', {
+            mode: 'no-cors',
             method: 'POST',
             body: files,
         })
+        .then((response) => console.log(response))
+        .then((data) => console.log(data))
     }
 
     function handleClick() {
