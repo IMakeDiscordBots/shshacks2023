@@ -2,9 +2,9 @@
     <nav class = "navbar">
         <ul class = "nav-items">
             <li class = "nav-item"><a href = "/">Home</a></li>
+            <li class = "nav-item"><a href = "/VideoP">Video</a></li>
             <li class = "nav-item"><a href = "/info">About</a></li>
             <li class = "nav-item"><a href = "/FAQs">FAQs</a></li>
-            <li class = "nav-item"><a href = "/VideoP">Video</a></li>
             <li class = "nav-item"><a href = "/Contact">Contact Us</a></li>
         </ul>
     </nav>
