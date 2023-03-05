@@ -7,7 +7,7 @@
 <body>
     <div class="main">
         <div class="content">
-            <h1>About</h1>
+            <h1>FAQs</h1>
             <div class = "about">
                 <p>
                     Q: What steps does this website take to protect my privacy?
