@@ -4,6 +4,7 @@
             <li class = "nav-item"><a href = "/">Home</a></li>
             <li class = "nav-item"><a href = "/info">Info</a></li>
             <li class = "nav-item"><a href = "/FAQs">FAQs</a></li>
+            <li class = "nav-item"><a href = "/VideoP">Video</a></li>
         </ul>
     </nav>
 </header>
