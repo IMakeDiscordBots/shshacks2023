@@ -5,7 +5,7 @@
 <Header />
 
 <p>
-    hi this is the FAQs section
+    
 </p>
 
 <style>

@@ -5,7 +5,7 @@
 <Header />
 
 <body>
-    Bills Contact info much secret
+    
 </body>
 
 <style>

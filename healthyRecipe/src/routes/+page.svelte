@@ -10,7 +10,7 @@
         <div class="content">
             <h1>clean your teeth.</h1>
             <p class = "about">
-                test TEST
+                invest in your smile, it's the best accessory you'll ever wear.
             </p>
             <DragDrop />
         </div>
@@ -30,7 +30,7 @@
         display: flex;
         justify-content: center;
         margin: auto;
-        padding: 40px;
+        padding: 120px;
         background-color: #D5F9DE;
     }
     .content {
