@@ -3,7 +3,7 @@
 
 ## How to run the program: 
 ```bash
-# Download the program and cd into the directory
+# Download the program and open the directory
 $ npm install # Install the dependencies for the project after cd'd into main directory
 $ npm run dev # Run the dev server on https://localhost:5173.
 ```
