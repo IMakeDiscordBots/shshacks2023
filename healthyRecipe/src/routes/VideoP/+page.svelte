@@ -4,7 +4,7 @@
 	/**
      * @type {HTMLVideoElement | null}
      */
-	let videoSource;
+	let videoSource = null;
 	let loading = false;
 
 	
@@ -21,8 +21,8 @@
     let name = '';
 	
 	const URL = 'model';
-    const modelURL = URL + "/model.json";
-    const metadataURL = URL + "/metadata.json";
+    const modelURL = URL + "../../../public/model/model.json";
+    const metadataURL = URL + "../../../public/model/metadata.json";
 	const obtenerVideoCamara = async () => {
 	  try {
 		
@@ -34,6 +34,7 @@
 		});
 		
 		
+     
       // @ts-ignore
       videoSource.srcObject = stream;
 		  // @ts-ignore

@@ -1,6 +1,6 @@
 <script>
     import Header from "../components/header.svelte";
-    import DragDrop from "../components/DragDrop.svelte"
+    import DragDrop from "../components/DragDrop.svelte";
 </script>
 
 <Header />
