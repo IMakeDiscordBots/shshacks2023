@@ -41,10 +41,10 @@
         }
         selectedFiles = [...selectedFiles, ...files];
 
-        fetch('http://127.0.0.1:5000/images', {
+        fetch('http://localhost:3000/', {
             mode: 'no-cors',
             method: 'POST',
-            body: files,
+            body: "hello there",
         })
         .then((response) => console.log(response))
         .then((data) => console.log(data))
