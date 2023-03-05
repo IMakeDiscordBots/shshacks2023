@@ -5,7 +5,7 @@
             <li class = "nav-item"><a href = "/VideoP">Video</a></li>
             <li class = "nav-item"><a href = "/info">About</a></li>
             <li class = "nav-item"><a href = "/FAQs">FAQs</a></li>
-            <li class = "nav-item"><a href = "/Contact">Contact Us</a></li>
+            <li class = "nav-item"><a href="mailto:“isinha24@students.d125.org, bguo24@students.d125.org, mkumar24@students.d125.org, amohanty24@students.d125.org, jefflu24@students.d125.org, jtao25@students.d125.org”">Contact Us</a></li>
         </ul>
     </nav>
 </header>
