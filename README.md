@@ -17,5 +17,7 @@
 - Bill Guo
 - Ishan Sinha
 
-##Dataset Used:
+
+##Main Dataset Used: https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
+
 
