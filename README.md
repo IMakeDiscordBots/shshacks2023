@@ -14,8 +14,8 @@ $ npm run dev # Run the dev server on https://localhost:5173.
 - Jonathan Tao
 - Milind Kumar
 - Jeffrey Lu
-- Bill Guo
 - Ishan Sinha
+- Bill Guo
 
 
 ## Main Dataset Used: 
