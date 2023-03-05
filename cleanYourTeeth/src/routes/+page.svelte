@@ -10,7 +10,7 @@
         <div class="content">
             <h1>clean your teeth.</h1>
             <p class = "about">
-                invest in your smile, it's the best accessory you'll ever wear.
+                <u>invest</u> in your <u>smile</u>, it's the <u>best</u> accessory you'll ever wear.
             </p>
             <DragDrop />
         </div>

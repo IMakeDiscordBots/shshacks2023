@@ -1,6 +1,7 @@
 <header>
     <nav class = "navbar">
         <ul class = "nav-items">
+            <li class = "nav-item"><img src = "../../static/IMG_1828-removebg-preview" alt = "logo"/></li>
             <li class = "nav-item"><a href = "/">Home</a></li>
             <li class = "nav-item"><a href = "/VideoP">Video</a></li>
             <li class = "nav-item"><a href = "/info">About</a></li>
@@ -32,11 +33,15 @@
         background: #EADEDA;
         height: 40px;
     }
+    nav {
+        width: 100%;
+    }
     nav ul {
         list-style: none;
         display: flex;
         gap: 20px;
         margin: 0;
+        justify-content: center;
     }
     nav a {
         color: var(--nav-bar);

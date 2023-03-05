@@ -3,6 +3,15 @@
      * @type {{ click: () => any; } | null}
      */
     export let fileInput = null;
+    let imgThing;
+    /**
+     * @type {number}
+     */
+    let confidence;
+    /**
+     * @type {string}
+     */
+    let confidencePercent;
     /**
      * @type {any[]}
      */
@@ -21,7 +30,7 @@
         event.preventDefault();
         fileInput = event.dataTransfer.files;
     }
-    
+
     //Handle file input
     /**
      * @param {{ target: { files: any; }; }} event
@@ -51,7 +60,44 @@
             handleClick();
         }
     }
+
+    import * as tf from "@tensorflow/tfjs";
+
+    async function handleImageUpload(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = async () => {
+            const image = new Image();
+            image.src = reader.result;
+            imgThing = image.src;
+            image.onload = async () => {
+                const tensor = tf.browser.fromPixels(image).toFloat();
+                const resized = tf.image.resizeBilinear(tensor, [224, 224]);
+                const expanded = resized.expandDims();
+                const model = await tf.loadLayersModel(
+                    "../../public/model/model.json"
+                );
+                const prediction = model.predict(expanded).dataSync();
+                confidence = Math.max(...prediction);
+                confidencePercent = (confidence * 100).toFixed(2);
+                console.log(`The confidence rate is ${confidence}`);
+            };
+        };
+        reader.readAsDataURL(file);
+    }
+
+    /* This is the reactive declaration for confidencePercent */
+    $: if (confidence) {
+        confidencePercent = (confidence * 100)?.toFixed(2);
+    }
 </script>
+
+{#if typeof confidencePercent !== "undefined"}
+    <h2>AI thinks your teeth are {confidencePercent}% healthy.</h2>
+{:else}
+    <h2>AI thinks you should upload an image.</h2>
+{/if}
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <div
@@ -61,6 +107,8 @@
     on:click={handleClick}
     tabindex="0"
     on:keydown={handleKeyDown}
+    on:change={handleImageUpload}
+    on:change:{handleFileSelect}
 >
     Drag and drop your image here or click to add a file to add a file
     <input
@@ -73,6 +121,7 @@
 </div>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gloock&family=Open+Sans&family=Playfair+Display&family=Raleway&display=swap');
     :root {
         --nav-bar: #7d84b2;
         --nav-text: #d95d39;
@@ -81,6 +130,9 @@
         --tertiary: #646e78;
     }
 
+    h2 {
+        font-family: 'Gloock', serif;
+    }
     .files-drop {
         max-width: 100%;
         height: 100px;
