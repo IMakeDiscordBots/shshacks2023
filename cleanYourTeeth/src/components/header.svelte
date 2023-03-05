@@ -1,7 +1,7 @@
 <header>
     <nav class = "navbar">
         <ul class = "nav-items">
-            <li class = "nav-item"><img src = "../../static/IMG_1828-removebg-preview" alt = "logo"/></li>
+            <li class = "nav-item"><img src = "https://i.ibb.co/wrc0m5b/IMG-1828-removebg-preview.png"  id = "logo" alt = "logo"/></li>
             <li class = "nav-item"><a href = "/">Home</a></li>
             <li class = "nav-item"><a href = "/VideoP">Video</a></li>
             <li class = "nav-item"><a href = "/info">About</a></li>
@@ -20,7 +20,10 @@
         --secondary: #DCCCBB;
         --tertiary: #646E78;
     }
-
+    #logo {
+        max-width: 100px;
+        height: auto;
+    }
     header {
         display: flex;
         justify-content: space-between;
@@ -32,7 +35,7 @@
         right: 0;
         box-shadow: 0 20px 30px -14px rgba(0, 0, 0, 0.25);
         background: #EADEDA;
-        height: 40px;
+        height: 70px;
     }
     nav {
         width: 100%;
@@ -43,6 +46,8 @@
         gap: 20px;
         margin: 0;
         justify-content: center;
+        padding-top: 20px;
+        align-items: center;
     }
     nav a {
         color: var(--nav-bar);
