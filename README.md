@@ -18,6 +18,13 @@
 - Ishan Sinha
 
 
-## Main Dataset Used: https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
+## Main Dataset Used: 
+https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
+
+## Additional Credit To:
+
+- Stack Overflow for code
+- Svelte Documentation
+- ChatGPT for cleaning up bugs and text
 
 
