@@ -18,6 +18,6 @@
 - Ishan Sinha
 
 
-##Main Dataset Used: https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
+## Main Dataset Used: https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
 
 
