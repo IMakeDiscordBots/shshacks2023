@@ -1,4 +1,7 @@
 <script>
+
+    // Later, perhaps in a form 'submit' handler or the input's 'change' handler:
+
     /**
      * @type {{ click: () => any; } | null}
      */
@@ -37,7 +40,13 @@
             console.log(`File size: ${file.size} bytes`);
         }
         selectedFiles = [...selectedFiles, ...files];
+
+        fetch('http://127.0.0.1:5000/images', {
+            method: 'POST',
+            body: files,
+        })
     }
+
     function handleClick() {
         // @ts-ignore
         fileInput.click();
