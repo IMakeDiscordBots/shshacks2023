@@ -21,6 +21,8 @@
         event.preventDefault();
         fileInput = event.dataTransfer.files;
     }
+    
+    //Handle file input
     /**
      * @param {{ target: { files: any; }; }} event
      */
