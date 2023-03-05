@@ -1,117 +1,114 @@
 <script>
-	
-    import * as tmImage from "@teachablemachine/image";
-	/**
-     * @type {HTMLVideoElement | null}
-     */
-	let videoSource;
-	let loading = false;
+  import * as tmImage from "@teachablemachine/image";
+  /**
+   * @type {HTMLVideoElement | null}
+   */
+  let videoSource;
+  let loading = false;
 
-	
-    /**
-     * @type {any}
-     */
-    let errorMessage;
-    /**
-     * @type {tmImage.CustomMobileNet}
-     */
-    let model; 
-    
-    let percentage = '';
-    let name = '';
-	
-	const URL = 'model';
-    const modelURL = URL + "/model.json";
-    const metadataURL = URL + "/metadata.json";
-	const obtenerVideoCamara = async () => {
-	  try {
-		
-		loading = true;
-		model = await tmImage.load(modelURL, metadataURL);
-		
-		const stream = await navigator.mediaDevices.getUserMedia({
-		  video: true,
-		});
-		
-		if (typeof(videoSource) !== "undefined") {
-      // @ts-ignore
-      videoSource.srcObject = stream;
-		  // @ts-ignore
-		  videoSource.play();
+  /**
+   * @type {any}
+   */
+  let errorMessage;
+  /**
+   * @type {tmImage.CustomMobileNet}
+   */
+  let model;
+
+  let percentage = "";
+  let name = "";
+
+  const URL = "model";
+  const modelURL = URL + "/model.json";
+  const metadataURL = URL + "/metadata.json";
+  const obtenerVideoCamara = async () => {
+    try {
+      loading = true;
+      model = await tmImage.load(modelURL, metadataURL);
+
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
+
+      if (typeof videoSource !== "undefined") {
+        // @ts-ignore
+        videoSource.srcObject = stream;
+        // @ts-ignore
+        videoSource.play();
+      }
+      loading = false;
+
+      setInterval(predict, 1000);
+    } catch (error) {
+      console.log(error);
     }
-		loading = false;
-		
-		setInterval(predict, 1000);
-	  } catch (error) {
-		console.log(error);
-	  }
-	};
+  };
 
-	async function predict(){
-            const predictions = await model.predict(videoSource);
-            const [chosenPrediction] = predictions.sort((/** @type {any} */ a, /** @type {{ probability: any; }} */ b) => b.probability
+  async function predict() {
+    const predictions = await model.predict(videoSource);
+    const [chosenPrediction] = predictions.sort(
+      (/** @type {any} */ a, /** @type {{ probability: any; }} */ b) =>
+        b.probability
     );
 
-    if(chosenPrediction) {
-        percentage = (chosenPrediction.probability * 100).toFixed(2) + "%";
-        // @ts-ignore
-        name = classNameToLabel (chosenPrediction.className);
+    if (chosenPrediction) {
+      percentage = (chosenPrediction.probability * 100).toFixed(2) + "%";
+      // @ts-ignore
+      name = classNameToLabel(chosenPrediction.className);
     }
 
     /**
-             * @param {any} className
-             */
-    function classNameToLabel(className){
-        switch(className){
-            case "Healthy":
-                return "Healthy";
-            case "Unhealthy":
-                return "Unhealthy";
-			
-        }
+     * @param {any} className
+     */
+    function classNameToLabel(className) {
+      switch (className) {
+        case "Healthy":
+          return "Healthy";
+        case "Unhealthy":
+          return "Unhealthy";
+      }
     }
-    };
-    
-        
-  </script>
-  <style>
-	main{
-		width: 100%;
-		height: 100vh;
-		padding: 0;
-		box-sizing: border-box;
-		position: absolute;
-	}
+  }
+</script>
 
-	video {
-        display: block;
-        margin: 20px auto;
-    }
+<main>
+  <h1>Teeth AI Model</h1>
+  <!-- svelte-ignore a11y-media-has-caption -->
+  <video bind:this={videoSource} />
+  <button on:click={obtenerVideoCamara}>CLICK</button>
+  {#if errorMessage}
+    <h2>{errorMessage}</h2>
+  {:else if loading}
+    <h2>Loading ...</h2>
+  {:else if percentage && name}
+    <h2>AI {percentage} certain your teeth is {name}</h2>
+  {/if}
+</main>
 
-    h1,h2{
-        text-align: center;
+<style>
+  main {
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+  }
 
-    }
+  video {
+    display: block;
+    margin: 20px auto;
+  }
 
-    h1{
-        font-size: 40px;
-    }
+  h1,
+  h2 {
+    text-align: center;
+  }
 
-    h2{
-        font-size: 20px;
-    }
-  </style>
-  
-  <main>
-	<h1>Teeth AI Model</h1>
-	<!-- svelte-ignore a11y-media-has-caption -->
-	<video bind:this={videoSource} />
-	<button on:click={obtenerVideoCamara}>CLICK</button>
-	{#if errorMessage}
-        <h2>{errorMessage}</h2>
-        {:else if loading}
-        <h2>Loading ...</h2>
-        {:else if percentage && name}
-        <h2>AI {percentage} certain your teeth is {name}</h2>
-    {/if} 
-  </main>
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+</style>

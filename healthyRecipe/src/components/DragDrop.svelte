@@ -26,12 +26,18 @@
      */
     function handleFileSelect(event) {
         const files = event.target.files;
-        console.log(fileInput);
-        console.log(`File exists: ${typeof fileInput !== "undefined"}`);
+        console.log(files);
+        console.log(`File exists: ${files.length > 0}`);
+        if (files.length > 0) {
+            const file = files[0];
+            console.log(`File name: ${file.name}`);
+            console.log(`File type: ${file.type}`);
+            console.log(`File size: ${file.size} bytes`);
+        }
         selectedFiles = [...selectedFiles, ...files];
     }
-
-    function handleClick() {// @ts-ignore
+    function handleClick() {
+        // @ts-ignore
         fileInput.click();
     }
 
