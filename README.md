@@ -2,11 +2,11 @@
 
 
 ## How to run the program: 
-1. Download the program
-2.
-3.
-4.
-5.
+```bash
+# Download the program and cd into the directory
+$ npm install # Install the dependencies for the project after cd'd into main directory
+$ npm run dev # Run the dev server on https://localhost:5173.
+```
 
 
 ## Contributors:
@@ -26,5 +26,6 @@ https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
 - Stack Overflow for code
 - Svelte Documentation
 - ChatGPT for cleaning up bugs and text
+- @tli24 for art
 
 
