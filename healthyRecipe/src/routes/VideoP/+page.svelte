@@ -75,7 +75,7 @@
   <h1>Teeth AI Model</h1>
   <!-- svelte-ignore a11y-media-has-caption -->
   <video bind:this={videoSource} />
-  <button on:click={obtenerVideoCamara}>CLICK</button>
+  <button on:click={obtenerVideoCamara}>Analyze Your Teeth</button>
   {#if errorMessage}
     <h2>{errorMessage}</h2>
   {:else if loading}
@@ -91,7 +91,10 @@
     height: 100vh;
     padding: 0;
     box-sizing: border-box;
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   video {
@@ -110,5 +113,21 @@
 
   h2 {
     font-size: 20px;
+  }
+
+  .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4CAF50;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
   }
 </style>
