@@ -1,18 +1,17 @@
 <script>
-    import Header from "../components/header.svelte";
-    import DragDrop from "../components/DragDrop.svelte"
+    export let header = "null";
+    export let body = "undefined";
 </script>
-
-<Header />
 
 <body>
     <div class="main">
         <div class="content">
-            <h1>clean your teeth.</h1>
-            <p class = "about">
-                test TEST
-            </p>
-            <DragDrop />
+            <h1>{header}</h1>
+            <div class = "about">
+                <p >
+                  {body}  
+                </p>
+            </div>
         </div>
     </div>
 </body>
@@ -30,7 +29,7 @@
         display: flex;
         justify-content: center;
         margin: auto;
-        padding: 40px;
+        padding: 100px;
         background-color: #D5F9DE;
     }
     .content {
