@@ -3,7 +3,7 @@
         <ul class = "nav-items">
             <li class = "nav-item"><a href = "#">Home</a></li>
             <li class = "nav-item"><a href = "#">Info</a></li>
-            <li class = "nav-item"><a href = "#">How?</a></li>
+            <li class = "nav-item"><a href = "#">FAQs</a></li>
         </ul>
     </nav>
 </header>
