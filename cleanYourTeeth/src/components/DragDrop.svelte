@@ -38,7 +38,7 @@
             console.log(`File type: ${file.type}`);
             console.log(`File size: ${file.size} bytes`);
             selectedFiles = [...selectedFiles, file];
-            await handleImageUpload(file);
+            await handleImageUpload({ target: file });
         }
     }
     function handleClick() {
@@ -47,18 +47,15 @@
     }
 
     /**
-     * @param {{ key: string; }} event
-     */
-    function handleKeyDown(event) {
-        if (event.key === "Enter") {
-            handleClick();
-        }
-    }
-
-    /**
      * @param {{ target: { files: any[]; }; }} event
      */
     async function handleImageUpload(event) {
+        // Check that the event target is an HTMLInputElement
+        if (!(event.target instanceof HTMLInputElement)) {
+            console.error("Event target is not an HTMLInputElement");
+            return;
+        }
+
         const file = event.target.files[0];
         const image = new Image();
         image.src = URL.createObjectURL(file);
@@ -72,7 +69,7 @@
             const predictions = await model.predict(expanded).array();
             const healthyPrediction = predictions[0][0];
             const unhealthyPrediction = predictions[0][1];
-            const threshold = 0.5;
+            const threshold = 0.25;
             const difference =
                 Math.abs(healthyPrediction - threshold) -
                 Math.abs(unhealthyPrediction - threshold);
@@ -109,8 +106,7 @@
     on:drop={handleDrop}
     on:click={handleClick}
     tabindex="0"
-    on:keydown={handleKeyDown}
-    on:change:{handleFileSelect}
+    on:keydown={(event) => { if(event.key === "Enter") handleFileSelect } }
 >
     Drag and drop your image here or click to add a file to add a file
     <input
@@ -118,7 +114,7 @@
         accept="image/*"
         style="display: none;"
         bind:this={fileInput}
-        on:change={handleFileSelect}
+        on:change={handleImageUpload}
     />
 </div>
 
