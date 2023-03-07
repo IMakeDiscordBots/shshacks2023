@@ -31,7 +31,7 @@
         justify-content: center;
         margin: auto;
         padding: 120px;
-        background-color: #D5F9DE;
+        background: repeating-linear-gradient(-45deg, #B1D9CA, #B1D9CA 50px, #E5FDF4 50px, #E5FDF4 100px);
     }
     .content {
         margin: auto;
