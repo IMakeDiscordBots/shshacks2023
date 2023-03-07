@@ -34,7 +34,7 @@
         left: 0;
         right: 0;
         box-shadow: 0 20px 30px -14px rgba(0, 0, 0, 0.25);
-        background: #EADEDA;
+        background: #FAF9F6;
         height: 70px;
     }
     nav {
