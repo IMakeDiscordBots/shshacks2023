@@ -110,7 +110,6 @@
     on:click={handleClick}
     tabindex="0"
     on:keydown={handleKeyDown}
-    on:change={handleImageUpload}
     on:change:{handleFileSelect}
 >
     Drag and drop your image here or click to add a file to add a file
