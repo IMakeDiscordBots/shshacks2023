@@ -19,9 +19,9 @@ $ npm run dev # Run the dev server on https://localhost:5173.
 - Bill Guo
 
 
-## Main Dataset Used: 
+## Initial Dataset Used: 
 https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
-- We did also use a lot of images of peoples' grins we found online via google images
+- We did also use a lot of images of peoples' grins we found online via google images, as the kaggle dataset only contained images of singular tooths.
 
 ## Special thanks to:
 - Tyler Li for art help and helping us come up with the idea we ended up going with
