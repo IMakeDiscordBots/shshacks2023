@@ -26,7 +26,7 @@ https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
 ## Special thanks to:
 - Tyler Li for art help and helping us come up with the idea we ended up going with
 - Alex Wang and Rudra Pandey for help choosing website design and help gathering data(we are sorry you guys had to look at disgusting pictures of teeth with us in order to create the model)
-- Chinmay Bandapalli for helping out with research whenever he could
+- Chinmay Bandapalli for helping out with research whenever he could(largely helped give us ideas for teethcare and about section(s))
 - Everyone who decided to help us test the webcam feature by showing their teeth to the model
 
 
