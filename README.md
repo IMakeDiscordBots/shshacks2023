@@ -21,13 +21,20 @@ $ npm run dev # Run the dev server on https://localhost:5173.
 
 ## Main Dataset Used: 
 https://www.kaggle.com/datasets/pushkar34/teeth-dataset?resource=download
+- We did also use a lot of images of peoples' grins we found online via google images
+
+## Special thanks to:
+- Tyler Li for art help and helping us come up with the idea we ended up going with
+- Alex Wang and Rudra Pandey for help choosing website design and help gathering data(we are sorry you guys had to look at disgusting pictures of teeth with us in order to create the model)
+- Chinmay Bandapalli for helping out with research whenever he could
+- Everyone who decided to help us test the webcam feature by showing their teeth to the model
+
 
 ## Additional Credit To:
 
 - Stack Overflow for code
 - Svelte Documentation
 - ChatGPT for cleaning up bugs and text
-- @tli24 for art
 - https://kit.svelte.dev/docs/introduction for SvelteKit help and docs
 - https://www.tensorflow.org/js/tutorials for TensorFlow and Image Processing ML help
 
