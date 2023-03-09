@@ -9,6 +9,9 @@ $ npm install # Install the dependencies for the project after cd'd into main di
 $ npm run dev # Run the dev server on https://localhost:5173.
 ```
 
+## OR visit:
+- https://shshacks2023.vercel.app/ (does not entirely work, webcam is broken)
+
 
 ## Contributors:
 - Aryan Mohanty
