@@ -92,7 +92,7 @@
         percentage = percentage;
     }
 </script>
-<div class = "dragDropContainer">
+
 {#if typeof percentage !== "undefined"}
     <h2>AI thinks your teeth are {percentage}% healthy.</h2>
 {:else}
@@ -117,7 +117,7 @@
         on:change={handleImageUpload}
     />
 </div>
-</div>
+
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Gloock&family=Open+Sans&family=Playfair+Display&family=Raleway&display=swap");
@@ -127,10 +127,6 @@
         --primary: #8d98a7;
         --secondary: #dcccbb;
         --tertiary: #646e78;
-    }
-    
-    .dragDropContainer {
-        background: #333;
     }
 
     h2 {
